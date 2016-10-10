@@ -24,6 +24,7 @@ import com.workshopdeel3.workshopdeel3.pojoAuto.Klant;
 import com.workshopdeel3.workshopdeel3.pojoAuto.KlantHasAdres;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -36,8 +37,7 @@ import javax.transaction.UserTransaction;
  *
  * @author maurice
  */
-@Named(value = "KlantDao")
-@SessionScoped
+//@Stateless
 public class KlantDao implements Serializable {
 
     public KlantDao(UserTransaction utx, EntityManagerFactory emf) {
