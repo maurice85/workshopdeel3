@@ -11,27 +11,28 @@
    <h:form>
        <h2>Persoonsgegevens</h2>   
       <h3>Voornaam</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newKlant.voornaam}"/>
       <h3>Achternaam</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newKlant.achternaam}"/>
       <h3>Tussenvoegsel</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newKlant.tussenvoegsel}"/>
       <h3>Email</h3>
-      <h:inputText value=""/>
-   </h:form>
+      <h:inputText value="#{klantAdresMb.newKlant.email}"/>
     <hr />
-   <h:form>
        <h2>Adresgegevens</h2>   
       <h3>Straatnaam</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newAdres.straatnaam}"/>
       <h3>Huisnummer</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newAdres.huisnummer}"/>
       <h3>Postcode</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newAdres.postcode}"/>
       <h3>Toevoeging</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newAdres.toevoeging}"/>
       <h3>Woonplaats</h3>
-      <h:inputText value=""/>
+      <h:inputText value="#{klantAdresMb.newAdres.woonplaats}"/>
+          <h:commandButton
+        id="submit"
+        action="#{klantAdresMb.createNewKlantAdres}" />
    </h:form>
     
 </body>
