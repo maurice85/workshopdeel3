@@ -10,6 +10,8 @@ import com.workshopdeel3.workshopdeel3.AutoDao.KlantDao;
 import com.workshopdeel3.workshopdeel3.AutoDao.exceptions.RollbackFailureException;
 import com.workshopdeel3.workshopdeel3.pojoAuto.Adres;
 import com.workshopdeel3.workshopdeel3.pojoAuto.Klant;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,14 +20,41 @@ import javax.inject.Named;
  *
  * @author maurice
  */
-@Named
+@Named("klantAdresMb")
 @Dependent
+@Stateless
 public class KlantAdresMb {
-    @Inject private KlantDao klantDao;
-    @Inject private AdresDao adresDao;
+    //v
+    @EJB private Adres newAdres;
+    @EJB private Klant newKlant;
+    @EJB private KlantDao klantDao;
+    @EJB private AdresDao adresDao;
     
+    
+    public Adres getNewAdres() {
+        return newAdres;
+    }
+
+    public void setNewAdres(Adres newAdres) {
+        this.newAdres = newAdres;
+    }
+
+    public Klant getNewKlant() {
+        return newKlant;
+    }
+
+    public void setNewKlant(Klant newKlant) {
+        this.newKlant = newKlant;
+    }
+    
+    public String createNewKlantAdres() throws Exception{
+        setKlant(newKlant);
+        setAdres(newAdres);
+        return "bevestigingspagina";
+    }
     public void setKlant(Klant klant) throws Exception{
         klantDao.create(klant);
+        
     }
     
     public Klant getKlant(Klant klant){
